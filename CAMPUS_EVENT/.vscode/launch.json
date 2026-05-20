@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Smart Campus Backend",
+            "request": "launch",
+            "mainClass": "com.campusevents.CampusEventsApplication",
+            "projectName": "campus-events",
+            "env": {
+                "JAVA_HOME": "C:\\Program Files\\Java\\jdk-25.0.2"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run React Frontend",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "cwd": "${workspaceFolder}",
+            "serverReadyAction": {
+                "pattern": "Local:.*(http://localhost:\\d+/)",
+                "action": "openExternally"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Full Stack (Backend + Frontend)",
+            "configurations": [
+                "Run Smart Campus Backend",
+                "Run React Frontend"
+            ]
+        }
+    ]
+}
